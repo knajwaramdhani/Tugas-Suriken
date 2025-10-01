@@ -126,37 +126,38 @@ int main() {
     float bladeLength = 0.5f;
     
     // Vertices: posisi (x, y, z) dan warna (r, g, b)
+    // Gradasi Pink ke Putih
     float vertices[] = {
-        // Persegi tengah (2 segitiga siku-siku)
+        // Persegi tengah (2 segitiga siku-siku) - Pink sedang
         // Segitiga 1
-        -size, -size, 0.0f,  0.7f, 0.7f, 0.8f,  // kiri bawah
-         size, -size, 0.0f,  0.7f, 0.7f, 0.8f,  // kanan bawah
-        -size,  size, 0.0f,  0.7f, 0.7f, 0.8f,  // kiri atas
+        -size, -size, 0.0f,  1.0f, 0.4f, 0.7f,  // kiri bawah - pink
+         size, -size, 0.0f,  1.0f, 0.4f, 0.7f,  // kanan bawah - pink
+        -size,  size, 0.0f,  1.0f, 0.4f, 0.7f,  // kiri atas - pink
         
         // Segitiga 2
-         size, -size, 0.0f,  0.7f, 0.7f, 0.8f,  // kanan bawah
-         size,  size, 0.0f,  0.7f, 0.7f, 0.8f,  // kanan atas
-        -size,  size, 0.0f,  0.7f, 0.7f, 0.8f,  // kiri atas
+         size, -size, 0.0f,  1.0f, 0.4f, 0.7f,  // kanan bawah - pink
+         size,  size, 0.0f,  1.0f, 0.4f, 0.7f,  // kanan atas - pink
+        -size,  size, 0.0f,  1.0f, 0.4f, 0.7f,  // kiri atas - pink
         
-        // Segitiga atas
-        -size, size, 0.0f,  0.8f, 0.8f, 0.9f,
-         size, size, 0.0f,  0.8f, 0.8f, 0.9f,
-         0.0f, size + bladeLength, 0.0f,  0.9f, 0.9f, 1.0f,
+        // Segitiga atas - gradasi pink ke putih
+        -size, size, 0.0f,  1.0f, 0.5f, 0.75f,  // pink terang
+         size, size, 0.0f,  1.0f, 0.5f, 0.75f,  // pink terang
+         0.0f, size + bladeLength, 0.0f,  1.0f, 0.95f, 0.98f,  // hampir putih
         
-        // Segitiga bawah
-        -size, -size, 0.0f,  0.8f, 0.8f, 0.9f,
-         size, -size, 0.0f,  0.8f, 0.8f, 0.9f,
-         0.0f, -size - bladeLength, 0.0f,  0.9f, 0.9f, 1.0f,
+        // Segitiga bawah - gradasi pink ke putih
+        -size, -size, 0.0f,  1.0f, 0.5f, 0.75f,  // pink terang
+         size, -size, 0.0f,  1.0f, 0.5f, 0.75f,  // pink terang
+         0.0f, -size - bladeLength, 0.0f,  1.0f, 0.95f, 0.98f,  // hampir putih
         
-        // Segitiga kanan
-        size, -size, 0.0f,  0.8f, 0.8f, 0.9f,
-        size,  size, 0.0f,  0.8f, 0.8f, 0.9f,
-        size + bladeLength, 0.0f, 0.0f,  0.9f, 0.9f, 1.0f,
+        // Segitiga kanan - gradasi pink ke putih
+        size, -size, 0.0f,  1.0f, 0.5f, 0.75f,  // pink terang
+        size,  size, 0.0f,  1.0f, 0.5f, 0.75f,  // pink terang
+        size + bladeLength, 0.0f, 0.0f,  1.0f, 0.95f, 0.98f,  // hampir putih
         
-        // Segitiga kiri
-        -size, -size, 0.0f,  0.8f, 0.8f, 0.9f,
-        -size,  size, 0.0f,  0.8f, 0.8f, 0.9f,
-        -size - bladeLength, 0.0f, 0.0f,  0.9f, 0.9f, 1.0f,
+        // Segitiga kiri - gradasi pink ke putih
+        -size, -size, 0.0f,  1.0f, 0.5f, 0.75f,  // pink terang
+        -size,  size, 0.0f,  1.0f, 0.5f, 0.75f,  // pink terang
+        -size - bladeLength, 0.0f, 0.0f,  1.0f, 0.95f, 0.98f,  // hampir putih
     };
 
     // Buat VAO dan VBO
@@ -195,7 +196,7 @@ int main() {
         glUseProgram(shaderProgram);
 
         // Update rotasi (diperlambat)
-        angle += 0.001f;
+        angle += 0.002f;
         if (angle > 2 * 3.14159f) angle -= 2 * 3.14159f;
 
         // Buat matrix transformasi
